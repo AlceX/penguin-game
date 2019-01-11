@@ -61,6 +61,7 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"spr_rock"
+		"spr_rock",
+		"spr_player"
 	]
 }

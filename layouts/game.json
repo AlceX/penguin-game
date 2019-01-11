@@ -17,7 +17,7 @@
 					"uid": 1,
 					"instanceVariables": {
 						"world_x": 0,
-						"world_y": 0,
+						"world_y": -100,
 						"world_z": 0,
 						"fov": 90,
 						"depth": 0
@@ -63,12 +63,60 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": -100,
-						"y": 0,
+						"x": -88,
+						"y": -14,
 						"width": 100,
 						"height": 115,
 						"originX": 0.5,
 						"originY": 0.8771929824561403,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_player",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 5,
+					"instanceVariables": {
+						"world_x": 0,
+						"world_y": 0,
+						"world_z": 100,
+						"transformed_x": 0,
+						"transformed_y": 0,
+						"transformed_z": 0,
+						"screen_x": 0,
+						"screen_y": 0,
+						"scale": 0,
+						"follow_distance": 300,
+						"speed_x": 0,
+						"acceleration_x": 300,
+						"deacceleration_x": 100,
+						"max_speed_x": 200,
+						"speed_z": 500,
+						"acceleration_z": 25,
+						"max_speed_z": 1000,
+						"min_speed_z": 500
+					},
+					"behaviors": {},
+					"world": {
+						"x": 309,
+						"y": 405,
+						"width": 129,
+						"height": 128,
+						"originX": 0.4883720930232558,
+						"originY": 0.0078125,
 						"color": [
 							1,
 							1,

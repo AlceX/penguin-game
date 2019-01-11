@@ -24,6 +24,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"version": "r133",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -35,13 +43,15 @@
 	"objectTypes": {
 		"items": [
 			"obj_camera",
-			"spr_rock"
+			"spr_rock",
+			"spr_player"
 		],
 		"subfolders": [
 			{
 				"items": [
 					"Function",
-					"Keyboard"
+					"Keyboard",
+					"Mouse"
 				],
 				"subfolders": [],
 				"name": "System"

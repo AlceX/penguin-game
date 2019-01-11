@@ -4,12 +4,12 @@
 		{
 			"eventType": "variable",
 			"name": "DEBUG",
-			"type": "number",
-			"initialValue": "1",
-			"comment": "Setting this to 1 enables the debugging tools.",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
 			"isStatic": false,
-			"isConstant": true,
-			"sid": 869671688612046
+			"isConstant": false,
+			"sid": 493997611043259
 		},
 		{
 			"eventType": "block",
@@ -23,8 +23,8 @@
 			"actions": [
 				{
 					"id": "destroy",
-					"objectClass": "Renderable",
-					"sid": 150099883021861
+					"objectClass": "spr_rock",
+					"sid": 143623325220483
 				},
 				{
 					"id": "set-instvar-value",
@@ -44,11 +44,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 432066225576885,
+							"sid": 861903088800972,
 							"parameters": {
 								"name": "\"\"",
 								"start-index": "1",
-								"end-index": "10"
+								"end-index": "100"
 							}
 						}
 					],
@@ -67,10 +67,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "spr_rock",
-							"sid": 356534807138500,
+							"sid": 765189065962377,
 							"parameters": {
 								"instance-variable": "world_x",
-								"value": "-150"
+								"value": "-500"
 							}
 						},
 						{
@@ -96,10 +96,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "spr_rock",
-							"sid": 507488263781983,
+							"sid": 218117546954098,
 							"parameters": {
 								"instance-variable": "world_x",
-								"value": "150"
+								"value": "500"
 							}
 						},
 						{
@@ -120,191 +120,35 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "for-each-ordered",
-					"objectClass": "System",
-					"sid": 283061576527768,
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 368408592824353,
 					"parameters": {
-						"object": "Renderable",
-						"expression": "Renderable.world_z",
-						"order": "ascending"
+						"key": 32
 					}
 				}
 			],
-			"actions": [],
-			"sid": 561845482745277,
-			"children": [
+			"actions": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Renderable",
-							"sid": 498995848659941,
-							"parameters": {
-								"instance-variable": "world_z",
-								"comparison": 4,
-								"value": "obj_camera.world_z"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "call-function",
-							"objectClass": "Function",
-							"sid": 629649393433097,
-							"parameters": {
-								"name": "\"project\"",
-								"parameter-n": [
-									"Renderable.UID"
-								]
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "Renderable",
-							"sid": 939368943217283,
-							"parameters": {
-								"x": "Self.screen_x",
-								"y": "Self.screen_y"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "Renderable",
-							"sid": 829353878154030,
-							"parameters": {
-								"scale": "Self.scale"
-							}
-						},
-						{
-							"id": "move-to-bottom",
-							"objectClass": "Renderable",
-							"sid": 200011109556787
-						}
-					],
-					"sid": 586430737716558
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 636852271880526
-						}
-					],
-					"actions": [
-						{
-							"id": "set-scale",
-							"objectClass": "Renderable",
-							"sid": 544454352660107,
-							"parameters": {
-								"scale": "0"
-							}
-						}
-					],
-					"sid": 694913085569775
+					"id": "toggle-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 866573104119220,
+					"parameters": {
+						"variable": "DEBUG"
+					}
 				}
-			]
+			],
+			"sid": 780629156760950
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-function",
-					"objectClass": "Function",
-					"sid": 122578379806217,
-					"parameters": {
-						"name": "\"project\""
-					}
-				}
-			],
-			"actions": [],
-			"sid": 616614264127661,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "Renderable",
-							"sid": 325965256747192,
-							"parameters": {
-								"unique-id": "Function.Param(0)"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Renderable",
-							"sid": 106349945514442,
-							"parameters": {
-								"instance-variable": "transformed_x",
-								"value": "Self.world_x - obj_camera.world_x"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Renderable",
-							"sid": 546004615865933,
-							"parameters": {
-								"instance-variable": "transformed_y",
-								"value": "Self.world_y - obj_camera.world_y"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Renderable",
-							"sid": 641766787499219,
-							"parameters": {
-								"instance-variable": "transformed_z",
-								"value": "Self.world_z - obj_camera.world_z"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Renderable",
-							"sid": 748402031352693,
-							"parameters": {
-								"instance-variable": "scale",
-								"value": "obj_camera.depth / Self.transformed_z"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Renderable",
-							"sid": 590256290916162,
-							"parameters": {
-								"instance-variable": "screen_x",
-								"value": "LayoutWidth / 2 + Self.transformed_x * Self.scale"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Renderable",
-							"sid": 345107083258527,
-							"parameters": {
-								"instance-variable": "screen_y",
-								"value": "LayoutHeight / 2 + Self.transformed_y * Self.scale"
-							}
-						}
-					],
-					"sid": 347077892609540
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
+					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 864486865706294,
+					"sid": 287496504143594,
 					"parameters": {
-						"variable": "DEBUG",
-						"comparison": 0,
-						"value": "1"
+						"variable": "DEBUG"
 					}
 				}
 			],
@@ -315,7 +159,7 @@
 					"eventType": "variable",
 					"name": "CAMERA_SPEED",
 					"type": "number",
-					"initialValue": "100",
+					"initialValue": "500",
 					"comment": "",
 					"isStatic": false,
 					"isConstant": true,
@@ -470,6 +314,418 @@
 						}
 					],
 					"sid": 275631224186316
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 301314139051838
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "obj_camera",
+					"sid": 936384733765268,
+					"parameters": {
+						"instance-variable": "world_z",
+						"value": "spr_player.world_z - spr_player.follow_distance"
+					}
+				}
+			],
+			"sid": 497240107865843
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 888457865567616
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "spr_player",
+					"sid": 439054052754779,
+					"parameters": {
+						"instance-variable": "world_x",
+						"value": "Self.speed_x * dt"
+					}
+				},
+				{
+					"id": "add-to-instvar",
+					"objectClass": "spr_player",
+					"sid": 782547196199066,
+					"parameters": {
+						"instance-variable": "world_z",
+						"value": "Self.speed_z * dt"
+					}
+				}
+			],
+			"sid": 411391026962897
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "mouse-button-is-down",
+					"objectClass": "Mouse",
+					"sid": 873629699743538,
+					"parameters": {
+						"mouse-button": "left"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "spr_player",
+					"sid": 682066457127298,
+					"parameters": {
+						"instance-variable": "speed_x",
+						"value": "clamp(Self.speed_x - Self.acceleration_x * dt, -Self.max_speed_x, Self.max_speed_x)"
+					}
+				}
+			],
+			"sid": 576788924140949
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "mouse-button-is-down",
+					"objectClass": "Mouse",
+					"sid": 303801316549976,
+					"parameters": {
+						"mouse-button": "right"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "spr_player",
+					"sid": 995445064928004,
+					"parameters": {
+						"instance-variable": "speed_x",
+						"value": "clamp(Self.speed_x + Self.acceleration_x * dt, -Self.max_speed_x, Self.max_speed_x)"
+					}
+				}
+			],
+			"sid": 728807794174551
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "mouse-button-is-down",
+					"objectClass": "Mouse",
+					"sid": 514648039012574,
+					"parameters": {
+						"mouse-button": "left"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "mouse-button-is-down",
+					"objectClass": "Mouse",
+					"sid": 221704144695338,
+					"parameters": {
+						"mouse-button": "right"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 681251529134335,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "spr_player",
+							"sid": 501432578980444,
+							"parameters": {
+								"instance-variable": "speed_x",
+								"comparison": 2,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_player",
+							"sid": 478069558024218,
+							"parameters": {
+								"instance-variable": "speed_x",
+								"value": "clamp(Self.speed_x + Self.deacceleration_x * dt, -Infinity, 0)"
+							}
+						}
+					],
+					"sid": 623467186217010
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "spr_player",
+							"sid": 657762246821673,
+							"parameters": {
+								"instance-variable": "speed_x",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_player",
+							"sid": 188176021532237,
+							"parameters": {
+								"instance-variable": "speed_x",
+								"value": "clamp(Self.speed_x - Self.deacceleration_x * dt, 0, Infinity)"
+							}
+						}
+					],
+					"sid": 770895154839183
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-mouse-wheel",
+					"objectClass": "Mouse",
+					"sid": 506058459577989,
+					"parameters": {
+						"direction": "up"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "spr_player",
+					"sid": 899718949050849,
+					"parameters": {
+						"instance-variable": "speed_z",
+						"value": "clamp(Self.speed_z + Self.acceleration_z, Self.min_speed_z, Self.max_speed_z)"
+					}
+				}
+			],
+			"sid": 374536411638754
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-mouse-wheel",
+					"objectClass": "Mouse",
+					"sid": 490403668012977,
+					"parameters": {
+						"direction": "down"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "spr_player",
+					"sid": 860591465236428,
+					"parameters": {
+						"instance-variable": "speed_z",
+						"value": "clamp(Self.speed_z - Self.acceleration_z, Self.min_speed_z, Self.max_speed_z)"
+					}
+				}
+			],
+			"sid": 602202858608146
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each-ordered",
+					"objectClass": "System",
+					"sid": 685156925284882,
+					"parameters": {
+						"object": "Renderable",
+						"expression": "Renderable.world_z",
+						"order": "ascending"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 616918059583174,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Renderable",
+							"sid": 234427139034749,
+							"parameters": {
+								"instance-variable": "world_z",
+								"comparison": 4,
+								"value": "obj_camera.world_z"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 130024113691302,
+							"parameters": {
+								"name": "\"project\"",
+								"parameter-n": [
+									"Renderable.UID"
+								]
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Renderable",
+							"sid": 315983382899467,
+							"parameters": {
+								"x": "Self.screen_x",
+								"y": "Self.screen_y"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Renderable",
+							"sid": 372920312797270,
+							"parameters": {
+								"scale": "Self.scale"
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Renderable",
+							"sid": 906885982973108
+						}
+					],
+					"sid": 765125496532834
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 665362808570486
+						}
+					],
+					"actions": [
+						{
+							"id": "set-scale",
+							"objectClass": "Renderable",
+							"sid": 978522990684175,
+							"parameters": {
+								"scale": "0"
+							}
+						}
+					],
+					"sid": 246116879397167
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-function",
+					"objectClass": "Function",
+					"sid": 603822158744243,
+					"parameters": {
+						"name": "\"project\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 921285995606594,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Renderable",
+							"sid": 266713862350580,
+							"parameters": {
+								"unique-id": "Function.Param(0)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Renderable",
+							"sid": 481874363024580,
+							"parameters": {
+								"instance-variable": "transformed_x",
+								"value": "Self.world_x - obj_camera.world_x"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Renderable",
+							"sid": 269504904312402,
+							"parameters": {
+								"instance-variable": "transformed_y",
+								"value": "Self.world_y - obj_camera.world_y"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Renderable",
+							"sid": 737726135732432,
+							"parameters": {
+								"instance-variable": "transformed_z",
+								"value": "Self.world_z - obj_camera.world_z"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Renderable",
+							"sid": 770064642614234,
+							"parameters": {
+								"instance-variable": "scale",
+								"value": "obj_camera.depth / Self.transformed_z"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Renderable",
+							"sid": 228231571845610,
+							"parameters": {
+								"instance-variable": "screen_x",
+								"value": "LayoutWidth / 2 + Self.transformed_x * Self.scale"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Renderable",
+							"sid": 357985010295851,
+							"parameters": {
+								"instance-variable": "screen_y",
+								"value": "LayoutHeight / 2 + Self.transformed_y * Self.scale"
+							}
+						}
+					],
+					"sid": 890185914054629
 				}
 			]
 		}

@@ -1,0 +1,111 @@
+{
+	"name": "spr_player",
+	"plugin-id": "Sprite",
+	"sid": 759583840248850,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "follow_distance",
+			"type": "number",
+			"desc": "Distance between the player and the camera.",
+			"sid": 294494463809146
+		},
+		{
+			"name": "speed_x",
+			"type": "number",
+			"desc": "Current speed at which the player is sliding horizontally.",
+			"sid": 669542307511205
+		},
+		{
+			"name": "acceleration_x",
+			"type": "number",
+			"desc": "Horizontal acceleration.",
+			"sid": 140777818536785
+		},
+		{
+			"name": "deacceleration_x",
+			"type": "number",
+			"desc": "Horizontal deacceleration.",
+			"sid": 776551426811193
+		},
+		{
+			"name": "max_speed_x",
+			"type": "number",
+			"desc": "Maximum horizontal speed.",
+			"sid": 999810604337480
+		},
+		{
+			"name": "speed_z",
+			"type": "number",
+			"desc": "Current speed at which the player is sliding forward.",
+			"sid": 736264282461000
+		},
+		{
+			"name": "acceleration_z",
+			"type": "number",
+			"desc": "The amount speed_z changes if you move the scroll wheel up or down.",
+			"sid": 326536337414079
+		},
+		{
+			"name": "max_speed_z",
+			"type": "number",
+			"desc": "Maximum forward speed.",
+			"sid": 947216566297391
+		},
+		{
+			"name": "min_speed_z",
+			"type": "number",
+			"desc": "Minimum forward speed.",
+			"sid": 460730248650549
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 129,
+						"height": 128,
+						"originX": 0.4883720930232558,
+						"originY": 0.0078125,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\spr_penguin-animation 1-000.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6,
+						"collisionPoly": {
+							"points": [
+								0.34108527131782945,
+								0.34375,
+								0.5,
+								0.015625,
+								0.7131782945736435,
+								0.28125,
+								0.7209302325581395,
+								0.5,
+								0.7209302325581395,
+								0.71875,
+								0.5,
+								0.8671875,
+								0.12403100775193798,
+								0.8671875,
+								0.24806201550387597,
+								0.5
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 992429274012689,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
