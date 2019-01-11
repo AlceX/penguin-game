@@ -381,12 +381,12 @@
 					],
 					"actions": [
 						{
-							"id": "add-to-instvar",
+							"id": "set-instvar-value",
 							"objectClass": "spr_player",
-							"sid": 575080697510309,
+							"sid": 699397706521938,
 							"parameters": {
 								"instance-variable": "world_x",
-								"value": "Self.speed_x * dt"
+								"value": "clamp(Self.world_x + Self.speed_x * dt, -230, 230)"
 							}
 						},
 						{
