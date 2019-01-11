@@ -616,36 +616,42 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-mouse-wheel",
-							"objectClass": "Mouse",
-							"sid": 913637823687352,
+							"id": "on-function",
+							"objectClass": "Function",
+							"sid": 216748191132992,
 							"parameters": {
-								"direction": "up"
+								"name": "\"slow_down_player\""
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-instvar-value",
+							"id": "tween-value",
 							"objectClass": "spr_player",
-							"sid": 117300709093649,
+							"sid": 350755156070233,
+							"behaviorType": "Tween",
 							"parameters": {
-								"instance-variable": "speed_z",
-								"value": "clamp(Self.speed_z + Self.acceleration_z, Self.min_speed_z, Self.max_speed_z)"
+								"tags": "\"slow_down\"",
+								"start-value": "Self.speed_z",
+								"end-value": "Self.speed_z - Self.speed_z_step",
+								"time": "1",
+								"ease": "noease",
+								"destroy-on-complete": "no"
 							}
 						}
 					],
-					"sid": 505472554592481
+					"sid": 615459224656259
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-mouse-wheel",
-							"objectClass": "Mouse",
-							"sid": 166777742288026,
+							"id": "is-playing",
+							"objectClass": "spr_player",
+							"sid": 806367101413625,
+							"behaviorType": "Tween",
 							"parameters": {
-								"direction": "down"
+								"tags": "\"slow_down\""
 							}
 						}
 					],
@@ -653,14 +659,36 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "spr_player",
-							"sid": 253167957905716,
+							"sid": 248912983892530,
 							"parameters": {
 								"instance-variable": "speed_z",
-								"value": "clamp(Self.speed_z - Self.acceleration_z, Self.min_speed_z, Self.max_speed_z)"
+								"value": "clamp(Self.Tween.Value(\"slow_down\"), Self.min_speed_z, Self.max_speed_z)"
 							}
 						}
 					],
-					"sid": 598197890490797
+					"sid": 588549415162752
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 825784320187621
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_player",
+							"sid": 301608061002376,
+							"parameters": {
+								"instance-variable": "speed_z",
+								"value": "clamp(Self.speed_z + Self.acceleration_z * dt, Self.min_speed_z, Self.max_speed_z)"
+							}
+						}
+					],
+					"sid": 523872290089617
 				}
 			],
 			"sid": 894601917282731
@@ -690,11 +718,12 @@
 					],
 					"actions": [
 						{
-							"id": "set-flipped",
-							"objectClass": "spr_log",
-							"sid": 556876869224854,
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 909563187754637,
 							"parameters": {
-								"state": "flipped"
+								"name": "\"slow_down_player\"",
+								"parameter-n": []
 							}
 						}
 					],

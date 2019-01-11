@@ -41,12 +41,6 @@
 			"sid": 736264282461000
 		},
 		{
-			"name": "acceleration_z",
-			"type": "number",
-			"desc": "The amount speed_z changes if you move the scroll wheel up or down.",
-			"sid": 326536337414079
-		},
-		{
 			"name": "max_speed_z",
 			"type": "number",
 			"desc": "Maximum forward speed.",
@@ -57,9 +51,27 @@
 			"type": "number",
 			"desc": "Minimum forward speed.",
 			"sid": 460730248650549
+		},
+		{
+			"name": "acceleration_z",
+			"type": "number",
+			"desc": "Acceleration when the player isn't boosting or getting hit.",
+			"sid": 788460529716688
+		},
+		{
+			"name": "speed_z_step",
+			"type": "number",
+			"desc": "How much the Z speed increases/decreases when the player boosts/gets hit.",
+			"sid": 123834011093988
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 979238549909622
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [

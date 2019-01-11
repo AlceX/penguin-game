@@ -104,12 +104,19 @@
 						"acceleration_x": 300,
 						"deacceleration_x": 100,
 						"max_speed_x": 200,
-						"speed_z": 500,
-						"acceleration_z": 25,
+						"speed_z": 700,
 						"max_speed_z": 1000,
-						"min_speed_z": 500
+						"min_speed_z": 300,
+						"acceleration_z": 50,
+						"speed_z_step": 300
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 309,
 						"y": 405,
