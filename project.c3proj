@@ -1,31 +1,70 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 13100,
-	"name": "Penguin",
+	"savedWithRelease": 13300,
+	"name": "Penguin Game",
 	"runtime": "c3",
 	"useWorker": false,
 	"bundleAddons": false,
-	"usedAddons": [],
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Function",
+			"name": "Function",
+			"author": "Scirra",
+			"version": "r133",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r133",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r133",
+			"bundled": false
+		}
+	],
 	"uniqueId": "nsi2p69gl23",
 	"objectTypes": {
-		"items": [],
-		"subfolders": []
+		"items": [
+			"obj_camera",
+			"spr_rock"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"Function",
+					"Keyboard"
+				],
+				"subfolders": [],
+				"name": "System"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"Renderable"
+		],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Game"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"eGame"
 		],
 		"subfolders": []
 	},
@@ -123,8 +162,9 @@
 		"orientations": "landscape",
 		"enableWebGL": true,
 		"gpuPreference": "high-performance",
-		"sampling": "linear",
+		"sampling": "trilinear",
 		"downscaling": "medium",
+		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "splash",
 		"preloadSounds": true,
 		"clearBackground": true,

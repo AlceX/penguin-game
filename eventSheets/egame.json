@@ -1,0 +1,478 @@
+{
+	"name": "eGame",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "DEBUG",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "Setting this to 1 enables the debugging tools.",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 869671688612046
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 865775021372488
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Renderable",
+					"sid": 150099883021861
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "obj_camera",
+					"sid": 890693548946505,
+					"parameters": {
+						"instance-variable": "depth",
+						"value": "(LayoutWidth / 2) / tan(Self.fov / 2)"
+					}
+				}
+			],
+			"sid": 481189631946613,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 432066225576885,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "1",
+								"end-index": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 695810282057194,
+							"parameters": {
+								"object-to-create": "spr_rock",
+								"layer": "0",
+								"x": "0",
+								"y": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_rock",
+							"sid": 356534807138500,
+							"parameters": {
+								"instance-variable": "world_x",
+								"value": "-150"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_rock",
+							"sid": 851199804511111,
+							"parameters": {
+								"instance-variable": "world_z",
+								"value": "200 * loopindex"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 408359136162239,
+							"parameters": {
+								"object-to-create": "spr_rock",
+								"layer": "0",
+								"x": "0",
+								"y": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_rock",
+							"sid": 507488263781983,
+							"parameters": {
+								"instance-variable": "world_x",
+								"value": "150"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_rock",
+							"sid": 645094629148484,
+							"parameters": {
+								"instance-variable": "world_z",
+								"value": "200 * loopindex"
+							}
+						}
+					],
+					"sid": 389453438641411
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each-ordered",
+					"objectClass": "System",
+					"sid": 283061576527768,
+					"parameters": {
+						"object": "Renderable",
+						"expression": "Renderable.world_z",
+						"order": "ascending"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 561845482745277,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Renderable",
+							"sid": 498995848659941,
+							"parameters": {
+								"instance-variable": "world_z",
+								"comparison": 4,
+								"value": "obj_camera.world_z"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 629649393433097,
+							"parameters": {
+								"name": "\"project\"",
+								"parameter-n": [
+									"Renderable.UID"
+								]
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Renderable",
+							"sid": 939368943217283,
+							"parameters": {
+								"x": "Self.screen_x",
+								"y": "Self.screen_y"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Renderable",
+							"sid": 829353878154030,
+							"parameters": {
+								"scale": "Self.scale"
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Renderable",
+							"sid": 200011109556787
+						}
+					],
+					"sid": 586430737716558
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 636852271880526
+						}
+					],
+					"actions": [
+						{
+							"id": "set-scale",
+							"objectClass": "Renderable",
+							"sid": 544454352660107,
+							"parameters": {
+								"scale": "0"
+							}
+						}
+					],
+					"sid": 694913085569775
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-function",
+					"objectClass": "Function",
+					"sid": 122578379806217,
+					"parameters": {
+						"name": "\"project\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 616614264127661,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Renderable",
+							"sid": 325965256747192,
+							"parameters": {
+								"unique-id": "Function.Param(0)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Renderable",
+							"sid": 106349945514442,
+							"parameters": {
+								"instance-variable": "transformed_x",
+								"value": "Self.world_x - obj_camera.world_x"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Renderable",
+							"sid": 546004615865933,
+							"parameters": {
+								"instance-variable": "transformed_y",
+								"value": "Self.world_y - obj_camera.world_y"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Renderable",
+							"sid": 641766787499219,
+							"parameters": {
+								"instance-variable": "transformed_z",
+								"value": "Self.world_z - obj_camera.world_z"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Renderable",
+							"sid": 748402031352693,
+							"parameters": {
+								"instance-variable": "scale",
+								"value": "obj_camera.depth / Self.transformed_z"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Renderable",
+							"sid": 590256290916162,
+							"parameters": {
+								"instance-variable": "screen_x",
+								"value": "LayoutWidth / 2 + Self.transformed_x * Self.scale"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Renderable",
+							"sid": 345107083258527,
+							"parameters": {
+								"instance-variable": "screen_y",
+								"value": "LayoutHeight / 2 + Self.transformed_y * Self.scale"
+							}
+						}
+					],
+					"sid": 347077892609540
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 864486865706294,
+					"parameters": {
+						"variable": "DEBUG",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 934515811884637,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "CAMERA_SPEED",
+					"type": "number",
+					"initialValue": "100",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 150770767304878
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 592311739487459,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "obj_camera",
+							"sid": 533175759503973,
+							"parameters": {
+								"instance-variable": "world_z",
+								"value": "CAMERA_SPEED * dt"
+							}
+						}
+					],
+					"sid": 526547194599683
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 126142958516589,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "obj_camera",
+							"sid": 339549248192649,
+							"parameters": {
+								"instance-variable": "world_z",
+								"value": "CAMERA_SPEED * dt"
+							}
+						}
+					],
+					"sid": 553827207111119
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 354892189813178,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "obj_camera",
+							"sid": 158324666112108,
+							"parameters": {
+								"instance-variable": "world_x",
+								"value": "CAMERA_SPEED * dt"
+							}
+						}
+					],
+					"sid": 380655103665218
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 815227120334585,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "obj_camera",
+							"sid": 323406866809788,
+							"parameters": {
+								"instance-variable": "world_x",
+								"value": "CAMERA_SPEED * dt"
+							}
+						}
+					],
+					"sid": 765454483997392
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 928743898426217,
+							"parameters": {
+								"key": 69
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "obj_camera",
+							"sid": 111455815081810,
+							"parameters": {
+								"instance-variable": "world_y",
+								"value": "CAMERA_SPEED * dt"
+							}
+						}
+					],
+					"sid": 622285307582507
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 733601573212511,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "obj_camera",
+							"sid": 862186109184640,
+							"parameters": {
+								"instance-variable": "world_y",
+								"value": "CAMERA_SPEED * dt"
+							}
+						}
+					],
+					"sid": 275631224186316
+				}
+			]
+		}
+	],
+	"sid": 160995284179888
+}

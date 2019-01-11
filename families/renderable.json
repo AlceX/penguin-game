@@ -1,0 +1,66 @@
+{
+	"name": "Renderable",
+	"plugin-id": "Sprite",
+	"sid": 299181208117798,
+	"instanceVariables": [
+		{
+			"name": "world_x",
+			"type": "number",
+			"desc": "X (horizontal) position of the camera in the world.",
+			"sid": 370990310137073
+		},
+		{
+			"name": "world_y",
+			"type": "number",
+			"desc": "Y (vertical) position of the camera in the world.",
+			"sid": 399189958041525
+		},
+		{
+			"name": "world_z",
+			"type": "number",
+			"desc": "Z (depth) position of the camera in the world.",
+			"sid": 117775610111605
+		},
+		{
+			"name": "transformed_x",
+			"type": "number",
+			"desc": "X value after accounting for the camera's translation.",
+			"sid": 824553326996291
+		},
+		{
+			"name": "transformed_y",
+			"type": "number",
+			"desc": "Y value after accounting for the camera's translation.",
+			"sid": 843525269665482
+		},
+		{
+			"name": "transformed_z",
+			"type": "number",
+			"desc": "Z value after accounting for the camera's translation.",
+			"sid": 955964040487712
+		},
+		{
+			"name": "screen_x",
+			"type": "number",
+			"desc": "X position of the object in screen coordinates.",
+			"sid": 357847647362667
+		},
+		{
+			"name": "screen_y",
+			"type": "number",
+			"desc": "Y position of the object in screen coordinates.",
+			"sid": 791571841510679
+		},
+		{
+			"name": "scale",
+			"type": "number",
+			"desc": "Scale of the object after account for it's depth relative to the camera.",
+			"sid": 843414681027645
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_rock"
+	]
+}
