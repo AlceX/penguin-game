@@ -62,6 +62,7 @@
 	"effectTypes": [],
 	"members": [
 		"spr_rock",
-		"spr_player"
+		"spr_player",
+		"spr_log"
 	]
 }

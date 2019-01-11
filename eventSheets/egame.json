@@ -27,13 +27,9 @@
 					"sid": 143623325220483
 				},
 				{
-					"id": "set-instvar-value",
-					"objectClass": "obj_camera",
-					"sid": 890693548946505,
-					"parameters": {
-						"instance-variable": "depth",
-						"value": "(LayoutWidth / 2) / tan(Self.fov / 2)"
-					}
+					"id": "destroy",
+					"objectClass": "spr_log",
+					"sid": 377183883736215
 				}
 			],
 			"sid": 481189631946613,
@@ -113,6 +109,68 @@
 						}
 					],
 					"sid": 389453438641411
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 263108878972598,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "1",
+								"end-index": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 576996435940979,
+							"parameters": {
+								"object-to-create": "spr_log",
+								"layer": "0",
+								"x": "0",
+								"y": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_log",
+							"sid": 623847816289957,
+							"parameters": {
+								"instance-variable": "world_x",
+								"value": "random(-200, 200)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_log",
+							"sid": 514716629067310,
+							"parameters": {
+								"instance-variable": "world_z",
+								"value": "loopindex * 2000"
+							}
+						}
+					],
+					"sid": 467592250811995
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "spr_rock",
+							"sid": 315119117238612,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 825285776526955
 				}
 			]
 		},
@@ -334,6 +392,28 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 257026240335298
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "obj_camera",
+							"sid": 307551834408981,
+							"parameters": {
+								"instance-variable": "depth",
+								"value": "(LayoutWidth / 2) / tan(Self.fov / 2)"
+							}
+						}
+					],
+					"sid": 499345458059067
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -584,6 +664,44 @@
 				}
 			],
 			"sid": 894601917282731
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Collision",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Simple? Yeah! But it works if you choose the collision polygons carefully."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "spr_player",
+							"sid": 268517942092780,
+							"parameters": {
+								"object": "spr_log"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-flipped",
+							"objectClass": "spr_log",
+							"sid": 556876869224854,
+							"parameters": {
+								"state": "flipped"
+							}
+						}
+					],
+					"sid": 585316258469978
+				}
+			],
+			"sid": 682766657600568
 		},
 		{
 			"eventType": "group",

@@ -44,7 +44,8 @@
 		"items": [
 			"obj_camera",
 			"spr_rock",
-			"spr_player"
+			"spr_player",
+			"spr_log"
 		],
 		"subfolders": [
 			{

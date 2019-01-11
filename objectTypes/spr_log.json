@@ -1,0 +1,48 @@
+{
+	"name": "spr_log",
+	"plugin-id": "Sprite",
+	"sid": 974501636719535,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 140,
+						"height": 112,
+						"originX": 0.5357142857142857,
+						"originY": 0.8125,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\log.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 10,
+						"collisionPoly": {
+							"points": [
+								0.17850035536602712,
+								0.4080687830687831,
+								0.6360696517412938,
+								0.1335978835978837,
+								0.8605543710021322,
+								0.5810185185185189,
+								0.31226012793176966,
+								0.9246031746031742
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 909630410028634,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
