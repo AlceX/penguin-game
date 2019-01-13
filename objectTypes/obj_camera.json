@@ -33,6 +33,12 @@
 			"type": "number",
 			"desc": "Distance between the viewer and the view screen. Automatically calculated based on FOV.",
 			"sid": 714192509522197
+		},
+		{
+			"name": "draw_distance",
+			"type": "number",
+			"desc": "How much far (in world units) will the camera draw.",
+			"sid": 700914711856134
 		}
 	],
 	"behaviorTypes": [],

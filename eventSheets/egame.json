@@ -768,6 +768,16 @@
 										"comparison": 4,
 										"value": "obj_camera.world_z"
 									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Renderable",
+									"sid": 343224912603626,
+									"parameters": {
+										"instance-variable": "world_z",
+										"comparison": 2,
+										"value": "obj_camera.world_z + obj_camera.draw_distance"
+									}
 								}
 							],
 							"actions": [

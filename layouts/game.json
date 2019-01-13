@@ -20,7 +20,8 @@
 						"world_y": -100,
 						"world_z": 0,
 						"fov": 90,
-						"depth": 0
+						"depth": 0,
+						"draw_distance": 8000
 					},
 					"behaviors": {},
 					"world": {
