@@ -63,6 +63,24 @@
 			"type": "number",
 			"desc": "Time in seconds the shake will last.",
 			"sid": 481319790867581
+		},
+		{
+			"name": "camera_distance",
+			"type": "number",
+			"desc": "Distance between camera and the player.",
+			"sid": 332270773768126
+		},
+		{
+			"name": "min_camera_angle",
+			"type": "number",
+			"desc": "Camera the angle will look from when speed is at minimum.",
+			"sid": 383302316472290
+		},
+		{
+			"name": "max_camera_angle",
+			"type": "number",
+			"desc": "Camera the angle will look from when speed is at maximum.",
+			"sid": 305812451446427
 		}
 	],
 	"behaviorTypes": [],

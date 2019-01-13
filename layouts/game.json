@@ -25,7 +25,10 @@
 						"y_follow": 100,
 						"z_follow": 300,
 						"max_screen_shake": 20,
-						"screen_shake_duration": 1
+						"screen_shake_duration": 1,
+						"camera_distance": 315,
+						"min_camera_angle": 10,
+						"max_camera_angle": 60
 					},
 					"behaviors": {},
 					"world": {
