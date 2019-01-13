@@ -136,7 +136,7 @@
 					}
 				},
 				{
-					"type": "spr_log",
+					"type": "spr_snow_clump",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -162,8 +162,8 @@
 						"y": 0,
 						"width": 140,
 						"height": 112,
-						"originX": 0.5357142857142857,
-						"originY": 0.8125,
+						"originX": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,

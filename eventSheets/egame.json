@@ -28,7 +28,7 @@
 				},
 				{
 					"id": "destroy",
-					"objectClass": "spr_log",
+					"objectClass": "spr_snow_clump",
 					"sid": 377183883736215
 				},
 				{
@@ -135,7 +135,7 @@
 							"objectClass": "System",
 							"sid": 576996435940979,
 							"parameters": {
-								"object-to-create": "spr_log",
+								"object-to-create": "spr_snow_clump",
 								"layer": "0",
 								"x": "0",
 								"y": "0"
@@ -143,7 +143,7 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "spr_log",
+							"objectClass": "spr_snow_clump",
 							"sid": 623847816289957,
 							"parameters": {
 								"instance-variable": "world_x",
@@ -152,7 +152,7 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "spr_log",
+							"objectClass": "spr_snow_clump",
 							"sid": 514716629067310,
 							"parameters": {
 								"instance-variable": "world_z",
@@ -857,7 +857,7 @@
 							"objectClass": "spr_player",
 							"sid": 268517942092780,
 							"parameters": {
-								"object": "spr_log"
+								"object": "spr_snow_clump"
 							}
 						}
 					],

@@ -63,7 +63,7 @@
 	"members": [
 		"spr_rock",
 		"spr_player",
-		"spr_log",
+		"spr_snow_clump",
 		"spr_speed_up"
 	]
 }
