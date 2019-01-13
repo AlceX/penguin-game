@@ -845,6 +845,11 @@
 								"name": "\"speed_up_player\"",
 								"parameter-n": []
 							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "spr_speed_up",
+							"sid": 952643188545717
 						}
 					],
 					"sid": 899176958803248
@@ -870,6 +875,11 @@
 								"name": "\"slow_down_player\"",
 								"parameter-n": []
 							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "spr_snow_clump",
+							"sid": 286232845244069
 						}
 					],
 					"sid": 585316258469978
