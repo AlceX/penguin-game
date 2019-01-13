@@ -45,11 +45,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 861903088800972,
+							"sid": 954389431490738,
 							"parameters": {
 								"name": "\"\"",
 								"start-index": "1",
-								"end-index": "100"
+								"end-index": "200"
 							}
 						}
 					],
@@ -77,10 +77,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "spr_rock",
-							"sid": 851199804511111,
+							"sid": 578311488811017,
 							"parameters": {
 								"instance-variable": "world_z",
-								"value": "200 * loopindex"
+								"value": "400 * loopindex"
 							}
 						},
 						{
@@ -106,10 +106,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "spr_rock",
-							"sid": 645094629148484,
+							"sid": 492253085520674,
 							"parameters": {
 								"instance-variable": "world_z",
-								"value": "200 * loopindex"
+								"value": "400 * loopindex"
 							}
 						}
 					],
@@ -121,11 +121,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 263108878972598,
+							"sid": 762409111507097,
 							"parameters": {
 								"name": "\"\"",
 								"start-index": "1",
-								"end-index": "10"
+								"end-index": "40"
 							}
 						}
 					],
@@ -168,11 +168,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 690760728884914,
+							"sid": 442434006925181,
 							"parameters": {
 								"name": "\"\"",
 								"start-index": "1",
-								"end-index": "10"
+								"end-index": "20"
 							}
 						}
 					],
@@ -200,10 +200,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "spr_speed_up",
-							"sid": 172790671591015,
+							"sid": 817023703387927,
 							"parameters": {
 								"instance-variable": "world_z",
-								"value": "loopindex * 2000 - 1000"
+								"value": "loopindex * 4000 - 1000"
 							}
 						}
 					],
@@ -225,6 +225,27 @@
 					"sid": 825285776526955
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 426593397098206
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Text",
+					"sid": 654833050849617,
+					"parameters": {
+						"text": "round(time) & \" \" & round(spr_player.speed_z)"
+					}
+				}
+			],
+			"sid": 726987115590419
 		},
 		{
 			"eventType": "group",
@@ -766,9 +787,14 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 825784320187621
+							"id": "compare-instance-variable",
+							"objectClass": "spr_player",
+							"sid": 251706478296751,
+							"parameters": {
+								"instance-variable": "speed_z",
+								"comparison": 2,
+								"value": "1000"
+							}
 						}
 					],
 					"actions": [

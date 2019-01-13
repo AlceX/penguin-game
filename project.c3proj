@@ -39,6 +39,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r133",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Tween",
 			"name": "Tween",
@@ -54,7 +62,8 @@
 			"spr_rock",
 			"spr_player",
 			"spr_log",
-			"spr_speed_up"
+			"spr_speed_up",
+			"Text"
 		],
 		"subfolders": [
 			{
