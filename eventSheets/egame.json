@@ -30,6 +30,11 @@
 					"id": "destroy",
 					"objectClass": "spr_log",
 					"sid": 377183883736215
+				},
+				{
+					"id": "destroy",
+					"objectClass": "spr_speed_up",
+					"sid": 207668939130927
 				}
 			],
 			"sid": 481189631946613,
@@ -156,6 +161,53 @@
 						}
 					],
 					"sid": 467592250811995
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 690760728884914,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "1",
+								"end-index": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 827689142989383,
+							"parameters": {
+								"object-to-create": "spr_speed_up",
+								"layer": "0",
+								"x": "0",
+								"y": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_speed_up",
+							"sid": 604287694629155,
+							"parameters": {
+								"instance-variable": "world_x",
+								"value": "random(-200, 200)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_speed_up",
+							"sid": 172790671591015,
+							"parameters": {
+								"instance-variable": "world_z",
+								"value": "loopindex * 2000 - 1000"
+							}
+						}
+					],
+					"sid": 802459836374214
 				},
 				{
 					"eventType": "block",
@@ -618,6 +670,42 @@
 						{
 							"id": "on-function",
 							"objectClass": "Function",
+							"sid": 493386875176743,
+							"parameters": {
+								"name": "\"speed_up_player\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all-tweens",
+							"objectClass": "spr_player",
+							"sid": 897037746368674,
+							"behaviorType": "Tween"
+						},
+						{
+							"id": "tween-value",
+							"objectClass": "spr_player",
+							"sid": 579750990661396,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"switch_speed\"",
+								"start-value": "Self.speed_z",
+								"end-value": "Self.speed_z + Self.speed_z_step",
+								"time": "1",
+								"ease": "easeoutquart",
+								"destroy-on-complete": "no"
+							}
+						}
+					],
+					"sid": 810216678429398
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-function",
+							"objectClass": "Function",
 							"sid": 216748191132992,
 							"parameters": {
 								"name": "\"slow_down_player\""
@@ -626,16 +714,22 @@
 					],
 					"actions": [
 						{
+							"id": "stop-all-tweens",
+							"objectClass": "spr_player",
+							"sid": 174980487463112,
+							"behaviorType": "Tween"
+						},
+						{
 							"id": "tween-value",
 							"objectClass": "spr_player",
-							"sid": 350755156070233,
+							"sid": 254707278646985,
 							"behaviorType": "Tween",
 							"parameters": {
-								"tags": "\"slow_down\"",
+								"tags": "\"switch_speed\"",
 								"start-value": "Self.speed_z",
 								"end-value": "Self.speed_z - Self.speed_z_step",
 								"time": "1",
-								"ease": "noease",
+								"ease": "easeoutquart",
 								"destroy-on-complete": "no"
 							}
 						}
@@ -648,10 +742,10 @@
 						{
 							"id": "is-playing",
 							"objectClass": "spr_player",
-							"sid": 806367101413625,
+							"sid": 278541936683833,
 							"behaviorType": "Tween",
 							"parameters": {
-								"tags": "\"slow_down\""
+								"tags": "\"switch_speed\""
 							}
 						}
 					],
@@ -659,10 +753,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "spr_player",
-							"sid": 248912983892530,
+							"sid": 960662438521039,
 							"parameters": {
 								"instance-variable": "speed_z",
-								"value": "clamp(Self.Tween.Value(\"slow_down\"), Self.min_speed_z, Self.max_speed_z)"
+								"value": "clamp(Self.Tween.Value(\"switch_speed\"), Self.min_speed_z, Self.max_speed_z)"
 							}
 						}
 					],
@@ -703,6 +797,31 @@
 				{
 					"eventType": "comment",
 					"text": "Simple? Yeah! But it works if you choose the collision polygons carefully."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "spr_player",
+							"sid": 736804656810308,
+							"parameters": {
+								"object": "spr_speed_up"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 961252187958541,
+							"parameters": {
+								"name": "\"speed_up_player\"",
+								"parameter-n": []
+							}
+						}
+					],
+					"sid": 899176958803248
 				},
 				{
 					"eventType": "block",

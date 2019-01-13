@@ -173,6 +173,45 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "spr_speed_up",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 8,
+					"instanceVariables": {
+						"world_x": 100,
+						"world_y": 100,
+						"world_z": 100,
+						"transformed_x": 0,
+						"transformed_y": 0,
+						"transformed_z": 0,
+						"screen_x": 0,
+						"screen_y": 0,
+						"scale": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": -362,
+						"y": -14,
+						"width": 100,
+						"height": 116,
+						"originX": 0.49,
+						"originY": 0.8275862068965517,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 254306758140949,

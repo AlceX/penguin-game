@@ -53,7 +53,8 @@
 			"obj_camera",
 			"spr_rock",
 			"spr_player",
-			"spr_log"
+			"spr_log",
+			"spr_speed_up"
 		],
 		"subfolders": [
 			{
