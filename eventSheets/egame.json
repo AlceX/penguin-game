@@ -105,6 +105,15 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "spr_rock",
+									"sid": 719188770917903,
+									"parameters": {
+										"instance-variable": "world_y",
+										"value": "20 * loopindex"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_rock",
 									"sid": 841160017259323,
 									"parameters": {
 										"instance-variable": "world_z",
@@ -129,6 +138,15 @@
 									"parameters": {
 										"instance-variable": "world_x",
 										"value": "500"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_rock",
+									"sid": 517617420542730,
+									"parameters": {
+										"instance-variable": "world_y",
+										"value": "20 * loopindex"
 									}
 								},
 								{
@@ -181,6 +199,15 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "spr_snow_clump",
+									"sid": 332172968556582,
+									"parameters": {
+										"instance-variable": "world_y",
+										"value": "100 * loopindex"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_snow_clump",
 									"sid": 320403360184551,
 									"parameters": {
 										"instance-variable": "world_z",
@@ -223,6 +250,15 @@
 									"parameters": {
 										"instance-variable": "world_x",
 										"value": "random(-200, 200)"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_speed_up",
+									"sid": 805252414666714,
+									"parameters": {
+										"instance-variable": "world_y",
+										"value": "200 * loopindex"
 									}
 								},
 								{
@@ -504,10 +540,19 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "obj_camera",
-							"sid": 782464400235112,
+							"sid": 176841618831430,
+							"parameters": {
+								"instance-variable": "world_y",
+								"value": "spr_player.world_y - Self.y_follow"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "obj_camera",
+							"sid": 401533367894401,
 							"parameters": {
 								"instance-variable": "world_z",
-								"value": "spr_player.world_z - spr_player.follow_distance"
+								"value": "spr_player.world_z - Self.z_follow"
 							}
 						}
 					],
@@ -540,6 +585,15 @@
 							"parameters": {
 								"instance-variable": "world_x",
 								"value": "clamp(Self.world_x + Self.speed_x * dt, -230, 230)"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "spr_player",
+							"sid": 993902213157841,
+							"parameters": {
+								"instance-variable": "world_y",
+								"value": "(Self.speed_z / 20) * dt"
 							}
 						},
 						{

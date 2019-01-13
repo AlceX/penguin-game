@@ -39,6 +39,18 @@
 			"type": "number",
 			"desc": "How much far (in world units) will the camera draw.",
 			"sid": 700914711856134
+		},
+		{
+			"name": "y_follow",
+			"type": "number",
+			"desc": "Height between the player and the camera.",
+			"sid": 199203874113447
+		},
+		{
+			"name": "z_follow",
+			"type": "number",
+			"desc": "Depth between the player and the camera.",
+			"sid": 373059748091156
 		}
 	],
 	"behaviorTypes": [],
