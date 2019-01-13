@@ -294,16 +294,6 @@
 					"sid": 617931273178960,
 					"children": [
 						{
-							"eventType": "variable",
-							"name": "CAMERA_SPEED",
-							"type": "number",
-							"initialValue": "500",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": true,
-							"sid": 749548705998334
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -319,10 +309,10 @@
 								{
 									"id": "add-to-instvar",
 									"objectClass": "obj_camera",
-									"sid": 989473890287239,
+									"sid": 341434398032431,
 									"parameters": {
 										"instance-variable": "world_z",
-										"value": "CAMERA_SPEED * dt"
+										"value": "spr_player.speed_z * dt"
 									}
 								}
 							],
@@ -344,10 +334,10 @@
 								{
 									"id": "subtract-from-instvar",
 									"objectClass": "obj_camera",
-									"sid": 781481219312704,
+									"sid": 117848821393176,
 									"parameters": {
 										"instance-variable": "world_z",
-										"value": "CAMERA_SPEED * dt"
+										"value": "spr_player.speed_z * dt"
 									}
 								}
 							],
@@ -369,10 +359,10 @@
 								{
 									"id": "add-to-instvar",
 									"objectClass": "obj_camera",
-									"sid": 972827643404756,
+									"sid": 642734155985728,
 									"parameters": {
 										"instance-variable": "world_x",
-										"value": "CAMERA_SPEED * dt"
+										"value": "spr_player.max_speed_x * dt"
 									}
 								}
 							],
@@ -394,10 +384,10 @@
 								{
 									"id": "subtract-from-instvar",
 									"objectClass": "obj_camera",
-									"sid": 599205954257651,
+									"sid": 989079572730441,
 									"parameters": {
 										"instance-variable": "world_x",
-										"value": "CAMERA_SPEED * dt"
+										"value": "spr_player.max_speed_x * dt"
 									}
 								}
 							],
@@ -419,10 +409,10 @@
 								{
 									"id": "add-to-instvar",
 									"objectClass": "obj_camera",
-									"sid": 928359814301555,
+									"sid": 499563541774169,
 									"parameters": {
 										"instance-variable": "world_y",
-										"value": "CAMERA_SPEED * dt"
+										"value": "spr_player.max_speed_x * dt"
 									}
 								}
 							],
@@ -444,10 +434,10 @@
 								{
 									"id": "subtract-from-instvar",
 									"objectClass": "obj_camera",
-									"sid": 565320935510241,
+									"sid": 925525680819017,
 									"parameters": {
 										"instance-variable": "world_y",
-										"value": "CAMERA_SPEED * dt"
+										"value": "spr_player.max_speed_x * dt"
 									}
 								}
 							],
