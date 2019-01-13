@@ -502,6 +502,16 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "screen_shake",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 356917747395554
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -540,10 +550,19 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "obj_camera",
-							"sid": 176841618831430,
+							"sid": 257706934876737,
+							"parameters": {
+								"instance-variable": "world_x",
+								"value": "random(-screen_shake, screen_shake)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "obj_camera",
+							"sid": 373373618068388,
 							"parameters": {
 								"instance-variable": "world_y",
-								"value": "spr_player.world_y - Self.y_follow"
+								"value": "(spr_player.world_y - Self.y_follow) + random(-screen_shake, screen_shake)"
 							}
 						},
 						{
@@ -554,9 +573,43 @@
 								"instance-variable": "world_z",
 								"value": "spr_player.world_z - Self.z_follow"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 377860988378765,
+							"parameters": {
+								"variable": "screen_shake",
+								"value": "clamp(screen_shake - (obj_camera.max_screen_shake / obj_camera.screen_shake_duration) * dt, 0, Infinity)"
+							}
 						}
 					],
 					"sid": 719943890785587
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-function",
+							"objectClass": "Function",
+							"sid": 307008527265817,
+							"parameters": {
+								"name": "\"start_screen_shake\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 651030590790570,
+							"parameters": {
+								"variable": "screen_shake",
+								"value": "obj_camera.max_screen_shake"
+							}
+						}
+					],
+					"sid": 694838094925805
 				}
 			],
 			"sid": 785579837485412
@@ -924,7 +977,16 @@
 						{
 							"id": "call-function",
 							"objectClass": "Function",
-							"sid": 909563187754637,
+							"sid": 670931967161580,
+							"parameters": {
+								"name": "\"start_screen_shake\"",
+								"parameter-n": []
+							}
+						},
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 707333631060967,
 							"parameters": {
 								"name": "\"slow_down_player\"",
 								"parameter-n": []

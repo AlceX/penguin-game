@@ -51,6 +51,18 @@
 			"type": "number",
 			"desc": "Depth between the player and the camera.",
 			"sid": 373059748091156
+		},
+		{
+			"name": "max_screen_shake",
+			"type": "number",
+			"desc": "Maximum amount the camera will shake.",
+			"sid": 295393167474824
+		},
+		{
+			"name": "screen_shake_duration",
+			"type": "number",
+			"desc": "Time in seconds the shake will last.",
+			"sid": 481319790867581
 		}
 	],
 	"behaviorTypes": [],

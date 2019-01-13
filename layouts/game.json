@@ -23,7 +23,9 @@
 						"depth": 0,
 						"draw_distance": 8000,
 						"y_follow": 100,
-						"z_follow": 300
+						"z_follow": 300,
+						"max_screen_shake": 20,
+						"screen_shake_duration": 1
 					},
 					"behaviors": {},
 					"world": {
