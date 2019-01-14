@@ -665,15 +665,6 @@
 						},
 						{
 							"id": "set-position",
-							"objectClass": "bg_floor",
-							"sid": 406001727380801,
-							"parameters": {
-								"x": "LayoutWidth / 2 + screen_shake_x",
-								"y": "lerp(505, 515, h_speed_unlerp)"
-							}
-						},
-						{
-							"id": "set-position",
 							"objectClass": "bg_sky",
 							"sid": 341873792978391,
 							"parameters": {
@@ -688,6 +679,15 @@
 							"parameters": {
 								"x": "LayoutWidth / 2 + screen_shake_x / 7",
 								"y": "bg_sky.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "bg_floor",
+							"sid": 643224845965280,
+							"parameters": {
+								"x": "LayoutWidth / 2 + screen_shake_x",
+								"y": "bg_sky.Y + bg_sky.Height - 5"
 							}
 						},
 						{

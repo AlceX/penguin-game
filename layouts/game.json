@@ -394,12 +394,12 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 328,
-						"y": 497,
+						"x": 320,
+						"y": 270,
 						"width": 700,
 						"height": 270,
 						"originX": 0.5,
-						"originY": 1,
+						"originY": 0,
 						"color": [
 							1,
 							1,
