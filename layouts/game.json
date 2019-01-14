@@ -88,61 +88,6 @@
 					}
 				},
 				{
-					"type": "spr_player",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 5,
-					"instanceVariables": {
-						"world_x": 0,
-						"world_y": 0,
-						"world_z": 100,
-						"transformed_x": 0,
-						"transformed_y": 0,
-						"transformed_z": 0,
-						"screen_x": 0,
-						"screen_y": 0,
-						"scale": 0,
-						"follow_distance": 300,
-						"speed_x": 0,
-						"acceleration_x": 300,
-						"deacceleration_x": 100,
-						"max_speed_x": 200,
-						"speed_z": 300,
-						"max_speed_z": 2800,
-						"min_speed_z": 300,
-						"acceleration_z": 100,
-						"speed_z_step": 300
-					},
-					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 309,
-						"y": 405,
-						"width": 129,
-						"height": 128,
-						"originX": 0.4883720930232558,
-						"originY": -0.0390625,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "spr_snow_clump",
 					"properties": {
 						"initially-visible": true,
@@ -433,9 +378,123 @@
 			"global": false
 		},
 		{
+			"name": "floor",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "bg_floor",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 13,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 328,
+						"y": 497,
+						"width": 700,
+						"height": 270,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 789260244011168,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
 			"name": "sprites",
 			"overriden": 0,
-			"instances": [],
+			"instances": [
+				{
+					"type": "spr_player",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 5,
+					"instanceVariables": {
+						"world_x": 0,
+						"world_y": 0,
+						"world_z": 100,
+						"transformed_x": 0,
+						"transformed_y": 0,
+						"transformed_z": 0,
+						"screen_x": 0,
+						"screen_y": 0,
+						"scale": 0,
+						"follow_distance": 300,
+						"speed_x": 0,
+						"acceleration_x": 300,
+						"deacceleration_x": 100,
+						"max_speed_x": 200,
+						"speed_z": 300,
+						"max_speed_z": 2800,
+						"min_speed_z": 300,
+						"acceleration_z": 100,
+						"speed_z_step": 300
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 309,
+						"y": 405,
+						"width": 129,
+						"height": 128,
+						"originX": 0.4883720930232558,
+						"originY": -0.0390625,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
 			"sid": 795419883173728,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

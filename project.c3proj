@@ -63,7 +63,8 @@
 			"spr_player",
 			"spr_snow_clump",
 			"spr_speed_up",
-			"Text"
+			"Text",
+			"bg_floor"
 		],
 		"subfolders": [
 			{

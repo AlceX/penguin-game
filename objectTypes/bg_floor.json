@@ -1,0 +1,56 @@
+{
+	"name": "bg_floor",
+	"plugin-id": "Sprite",
+	"sid": 226650270148695,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 700,
+						"height": 270,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\floor.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 21,
+						"collisionPoly": {
+							"points": [
+								0.015286624203821656,
+								0.044444444444444446,
+								0.5,
+								0.08888888888888889,
+								0.9656050955414013,
+								0.0962962962962963,
+								0.9987261146496815,
+								0.5,
+								0.9987261146496815,
+								0.9962962962962963,
+								0.5,
+								0.9962962962962963,
+								0,
+								0.9962962962962963,
+								0,
+								0.5
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 904366137526129,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
