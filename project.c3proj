@@ -78,7 +78,8 @@
 			{
 				"items": [
 					"bg_sky",
-					"bg_gradient"
+					"bg_gradient",
+					"bg_mountains"
 				],
 				"subfolders": [],
 				"name": "BG"

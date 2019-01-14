@@ -1,0 +1,56 @@
+{
+	"name": "bg_mountains",
+	"plugin-id": "Sprite",
+	"sid": 265926420835557,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 680,
+						"height": 280,
+						"originX": 0.5,
+						"originY": 0.017857142857142856,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\mountains.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 10,
+						"collisionPoly": {
+							"points": [
+								0.23529411764705882,
+								0.5714285714285714,
+								0.5,
+								0.6428571428571429,
+								0.8441176470588235,
+								0.375,
+								0.888235294117647,
+								0.5,
+								0.9985294117647059,
+								0.9964285714285714,
+								0.5,
+								0.9964285714285714,
+								0,
+								0.9964285714285714,
+								0.25882352941176473,
+								0.5
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 482178724916134,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

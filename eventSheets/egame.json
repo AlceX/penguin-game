@@ -594,6 +594,15 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
+							"sid": 291048172493852,
+							"parameters": {
+								"variable": "screen_shake",
+								"value": "clamp(screen_shake - (obj_camera.max_screen_shake / obj_camera.screen_shake_duration) * dt, 0, Infinity)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
 							"sid": 919669118151894,
 							"parameters": {
 								"variable": "screen_shake_x",
@@ -655,37 +664,30 @@
 							}
 						},
 						{
-							"id": "set-x",
+							"id": "set-position",
 							"objectClass": "bg_sky",
-							"sid": 879728336210401,
+							"sid": 341873792978391,
 							"parameters": {
-								"x": "LayoutWidth / 2 + screen_shake_x / 10"
+								"x": "LayoutWidth / 2 + screen_shake_x / 10",
+								"y": "lerp(-15, -6, h_speed_unlerp)"
 							}
 						},
 						{
-							"id": "set-y",
-							"objectClass": "bg_sky",
-							"sid": 348998791046060,
+							"id": "set-position",
+							"objectClass": "bg_mountains",
+							"sid": 697517160311963,
 							"parameters": {
-								"y": "lerp(-15, -6, h_speed_unlerp)"
+								"x": "LayoutWidth / 2 + screen_shake_x / 7",
+								"y": "bg_sky.Y"
 							}
 						},
 						{
 							"id": "set-position-to-another-object",
 							"objectClass": "bg_gradient",
-							"sid": 534700446494716,
+							"sid": 414353167436257,
 							"parameters": {
 								"object": "bg_sky",
 								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 376247305684481,
-							"parameters": {
-								"variable": "screen_shake",
-								"value": "clamp(screen_shake - (obj_camera.max_screen_shake / obj_camera.screen_shake_duration) * dt, 0, Infinity)"
 							}
 						}
 					],
