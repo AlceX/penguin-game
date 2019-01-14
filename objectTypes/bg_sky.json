@@ -1,0 +1,56 @@
+{
+	"name": "bg_sky",
+	"plugin-id": "Sprite",
+	"sid": 601048862120647,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 680,
+						"height": 280,
+						"originX": 0.5,
+						"originY": 0.017857142857142856,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\bg.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5,
+						"collisionPoly": {
+							"points": [
+								0.0014705882352941176,
+								0.0035714285714285713,
+								0.5022058823529412,
+								0.0035714285714285713,
+								1,
+								0.0035714285714285713,
+								1,
+								0.9160714285714285,
+								0.6617647058823529,
+								1,
+								0.5022058823529412,
+								1,
+								0.34117647058823536,
+								1,
+								0.0014705882352941176,
+								0.9160714285714285
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 759103780990180,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

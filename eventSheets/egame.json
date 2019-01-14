@@ -85,10 +85,10 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 216805316798429,
+									"sid": 743210315406599,
 									"parameters": {
 										"object-to-create": "spr_rock",
-										"layer": "0",
+										"layer": "\"sprites\"",
 										"x": "0",
 										"y": "0"
 									}
@@ -123,10 +123,10 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 950357340209188,
+									"sid": 140796524707328,
 									"parameters": {
 										"object-to-create": "spr_rock",
-										"layer": "0",
+										"layer": "\"sprites\"",
 										"x": "0",
 										"y": "0"
 									}
@@ -179,10 +179,10 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 276003562304225,
+									"sid": 324000567230209,
 									"parameters": {
 										"object-to-create": "spr_snow_clump",
-										"layer": "0",
+										"layer": "\"sprites\"",
 										"x": "0",
 										"y": "0"
 									}
@@ -235,10 +235,10 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 313588602124308,
+									"sid": 897247301391763,
 									"parameters": {
 										"object-to-create": "spr_speed_up",
-										"layer": "0",
+										"layer": "\"sprites\"",
 										"x": "0",
 										"y": "0"
 									}
@@ -512,6 +512,26 @@
 					"sid": 817386620773526
 				},
 				{
+					"eventType": "variable",
+					"name": "screen_shake_x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 871987634449327
+				},
+				{
+					"eventType": "variable",
+					"name": "screen_shake_y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 311587762714491
+				},
+				{
 					"eventType": "comment",
 					"text": "\"h\" is for helper variable."
 				},
@@ -574,6 +594,24 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
+							"sid": 919669118151894,
+							"parameters": {
+								"variable": "screen_shake_x",
+								"value": "random(-screen_shake, screen_shake)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 265486857083846,
+							"parameters": {
+								"variable": "screen_shake_y",
+								"value": "random(-screen_shake, screen_shake)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
 							"sid": 909460326800081,
 							"parameters": {
 								"variable": "h_speed_unlerp",
@@ -592,19 +630,19 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "obj_camera",
-							"sid": 539268635369487,
+							"sid": 818164915310802,
 							"parameters": {
 								"instance-variable": "world_x",
-								"value": "random(-screen_shake, screen_shake)"
+								"value": "screen_shake_x"
 							}
 						},
 						{
 							"id": "set-instvar-value",
 							"objectClass": "obj_camera",
-							"sid": 296099379302204,
+							"sid": 355242969599643,
 							"parameters": {
 								"instance-variable": "world_y",
-								"value": "(spr_player.world_y - obj_camera.camera_distance * sin(h_look_angle)) + random(-screen_shake, screen_shake)"
+								"value": "(spr_player.world_y - obj_camera.camera_distance * sin(h_look_angle)) + screen_shake_y"
 							}
 						},
 						{
@@ -614,6 +652,31 @@
 							"parameters": {
 								"instance-variable": "world_z",
 								"value": "spr_player.world_z - obj_camera.camera_distance * cos(h_look_angle) - lerp(0, obj_camera.z_follow, h_speed_unlerp)"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "bg_sky",
+							"sid": 879728336210401,
+							"parameters": {
+								"x": "LayoutWidth / 2 + screen_shake_x / 10"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "bg_sky",
+							"sid": 348998791046060,
+							"parameters": {
+								"y": "lerp(-15, -6, h_speed_unlerp)"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "bg_gradient",
+							"sid": 534700446494716,
+							"parameters": {
+								"object": "bg_sky",
+								"image-point-optional": "0"
 							}
 						},
 						{
@@ -936,28 +999,42 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "spr_player",
-							"sid": 251706478296751,
-							"parameters": {
-								"instance-variable": "speed_z",
-								"comparison": 2,
-								"value": "1000"
-							}
+							"id": "else",
+							"objectClass": "System",
+							"sid": 285973256360877
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 232094708156361,
+					"children": [
 						{
-							"id": "set-instvar-value",
-							"objectClass": "spr_player",
-							"sid": 301608061002376,
-							"parameters": {
-								"instance-variable": "speed_z",
-								"value": "clamp(Self.speed_z + Self.acceleration_z * dt, Self.min_speed_z, Self.max_speed_z)"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "spr_player",
+									"sid": 270789077377288,
+									"parameters": {
+										"instance-variable": "speed_z",
+										"comparison": 2,
+										"value": "1000"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_player",
+									"sid": 562457316914770,
+									"parameters": {
+										"instance-variable": "speed_z",
+										"value": "clamp(Self.speed_z + Self.acceleration_z * dt, Self.min_speed_z, Self.max_speed_z)"
+									}
+								}
+							],
+							"sid": 811619350720192
 						}
-					],
-					"sid": 523872290089617
+					]
 				}
 			],
 			"sid": 894601917282731

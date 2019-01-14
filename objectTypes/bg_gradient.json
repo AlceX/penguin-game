@@ -1,0 +1,56 @@
+{
+	"name": "bg_gradient",
+	"plugin-id": "Sprite",
+	"sid": 143585243351655,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 680,
+						"height": 280,
+						"originX": 0.5,
+						"originY": 0.017857142857142856,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\gradient.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8,
+						"collisionPoly": {
+							"points": [
+								0.0014705882352941176,
+								0.0035714285714285713,
+								0.5022058823529412,
+								0.0035714285714285713,
+								1,
+								0.0035714285714285713,
+								1,
+								0.9160714285714285,
+								0.6676470588235294,
+								1,
+								0.5022058823529412,
+								1,
+								0.3352941176470588,
+								1,
+								0.0014705882352941176,
+								0.9160714285714285
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 242690115385499,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
