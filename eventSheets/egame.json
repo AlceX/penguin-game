@@ -96,10 +96,10 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "spr_rock",
-									"sid": 974844752443827,
+									"sid": 726278263586910,
 									"parameters": {
 										"instance-variable": "world_x",
-										"value": "-500"
+										"value": "-500 + random(-50, 50)"
 									}
 								},
 								{
@@ -134,10 +134,10 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "spr_rock",
-									"sid": 108475625805427,
+									"sid": 910218465553690,
 									"parameters": {
 										"instance-variable": "world_x",
-										"value": "500"
+										"value": "500 + random(-50, 50)"
 									}
 								},
 								{

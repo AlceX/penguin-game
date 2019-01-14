@@ -12,13 +12,33 @@
 				"frames": [
 					{
 						"width": 100,
-						"height": 115,
-						"originX": 0.48,
-						"originY": 0.06956521739130435,
-						"originalSource": "C:\\Users\\gamedev\\Desktop\\rock.png",
+						"height": 64,
+						"originX": 0.47530864197530864,
+						"originY": 0.057692307692307696,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\boulder.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4,
+						"imageSpriteId": 25,
+						"collisionPoly": {
+							"points": [
+								0.1728395061728395,
+								0.16346153846153846,
+								0.5,
+								0.04807692307692308,
+								0.845679012345679,
+								0.125,
+								0.9506172839506173,
+								0.5192307692307693,
+								0.8395061728395061,
+								0.8942307692307693,
+								0.5,
+								0.9519230769230769,
+								0.1419753086419753,
+								0.9134615384615384,
+								0.006172839506172839,
+								0.5192307692307693
+							]
+						},
 						"duration": 1
 					}
 				],
