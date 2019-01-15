@@ -827,9 +827,9 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 378694553635808,
+							"sid": 199043590912069,
 							"parameters": {
-								"seconds": "1.0"
+								"seconds": "0.5"
 							}
 						},
 						{
@@ -912,6 +912,32 @@
 						}
 					],
 					"sid": 331537346939287
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-group-active",
+							"objectClass": "System",
+							"sid": 816565046637816,
+							"parameters": {
+								"group-name": "\"Camera\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 802777945341622,
+							"parameters": {
+								"variable": "state",
+								"value": "\"sliding\""
+							}
+						}
+					],
+					"sid": 629241639937033
 				}
 			],
 			"sid": 221897017195327
@@ -1565,7 +1591,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Timer",
+			"title": "Timer and Win Condition",
 			"description": "",
 			"isActiveOnStart": false,
 			"children": [
@@ -1583,16 +1609,21 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 602016525268419
+							"id": "compare-instance-variable",
+							"objectClass": "spr_player",
+							"sid": 335165303274282,
+							"parameters": {
+								"instance-variable": "world_z",
+								"comparison": 2,
+								"value": "80000"
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-text",
 							"objectClass": "gui_timer",
-							"sid": 501625206011770,
+							"sid": 200665182339217,
 							"parameters": {
 								"text": "floor(timer) & \".\" & floor((timer % 1) * 10)"
 							}
@@ -1600,14 +1631,196 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 263053320803650,
+							"sid": 978607974904824,
 							"parameters": {
 								"variable": "timer",
 								"value": "dt"
 							}
 						}
 					],
-					"sid": 424577635002600
+					"sid": 207089698432606
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 549010623762055
+						}
+					],
+					"actions": [],
+					"sid": 782981512032399,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-group-active",
+									"objectClass": "System",
+									"sid": 393995112451330,
+									"parameters": {
+										"group-name": "\"Camera\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 248283716628947,
+									"parameters": {
+										"group-name": "\"Camera\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "gui_timer",
+									"sid": 769102558590158,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetY",
+										"end-value": "120",
+										"time": "1.5",
+										"ease": "easeoutexpo",
+										"destroy-on-complete": "no"
+									}
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "gui_timer",
+									"sid": 176864901620594,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"scale\"",
+										"start-value": "1",
+										"end-value": "5",
+										"time": "1.5",
+										"ease": "easeoutexpo",
+										"destroy-on-complete": "no"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "gui_timer",
+									"sid": 160930045945642,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "2"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 532873577821165,
+									"parameters": {
+										"seconds": "1.5"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "gui_text",
+									"sid": 670085675800658,
+									"parameters": {
+										"x": "gui_timer.X",
+										"y": "gui_timer.Y - 50"
+									}
+								}
+							],
+							"sid": 282886947262040
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 941072306176984
+								}
+							],
+							"actions": [],
+							"sid": 488145848079172,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 596369388069812,
+											"parameters": {
+												"key": 32
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 284087061718981,
+											"parameters": {
+												"layer": "\"title\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 433718563987659,
+											"parameters": {
+												"layer": "\"overlay\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 749601945134879,
+											"parameters": {
+												"variable": "timer",
+												"value": "0"
+											}
+										},
+										{
+											"id": "restart-layout",
+											"objectClass": "System",
+											"sid": 304199605454157
+										}
+									],
+									"sid": 593355881436500
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "gui_timer",
+							"sid": 683142685458153,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"scale\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-scale",
+							"objectClass": "gui_timer",
+							"sid": 693496852434908,
+							"parameters": {
+								"scale": "Self.Tween.Value(\"scale\")"
+							}
+						}
+					],
+					"sid": 744974609152657
 				}
 			],
 			"sid": 296665261982652
@@ -1672,9 +1885,9 @@
 				{
 					"id": "set-group-active",
 					"objectClass": "System",
-					"sid": 969342995273272,
+					"sid": 469534758408845,
 					"parameters": {
-						"group-name": "\"Timer\"",
+						"group-name": "\"Timer and Win Condition\"",
 						"state": "activated"
 					}
 				},

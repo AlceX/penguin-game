@@ -1,19 +1,19 @@
 {
-	"name": "gui_timer",
+	"name": "gui_text",
 	"plugin-id": "Spritefont2",
-	"sid": 265090439167017,
+	"sid": 818288444568632,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Tween",
 			"name": "Tween",
-			"sid": 616650643038634
+			"sid": 196189045725193
 		},
 		{
 			"behaviorId": "Flash",
 			"name": "Flash",
-			"sid": 214392407484258
+			"sid": 105570831543415
 		}
 	],
 	"effectTypes": [],
@@ -25,6 +25,6 @@
 		"originalSource": "C:\\Users\\gamedev\\Desktop\\text.png",
 		"exportFormat": "png",
 		"exportQuality": 0.8,
-		"imageSpriteId": 44
+		"imageSpriteId": 45
 	}
 }

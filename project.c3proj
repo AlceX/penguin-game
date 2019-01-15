@@ -53,6 +53,14 @@
 			"author": "Scirra",
 			"version": "r134",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"version": "r134",
+			"bundled": false
 		}
 	],
 	"uniqueId": "nsi2p69gl23",
@@ -94,7 +102,8 @@
 				"items": [
 					"tut_hands",
 					"tut_text",
-					"gui_timer"
+					"gui_timer",
+					"gui_text"
 				],
 				"subfolders": [],
 				"name": "GUI"
