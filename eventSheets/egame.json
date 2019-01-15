@@ -717,40 +717,165 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-playing",
-							"objectClass": "spr_player",
-							"sid": 202347284020736,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"switch_speed\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-speed",
-							"objectClass": "spr_player",
-							"sid": 208044827664545,
-							"parameters": {
-								"speed": "0"
-							}
-						}
-					],
-					"sid": 130388546643072
+					"eventType": "variable",
+					"name": "angle_shake",
+					"type": "number",
+					"initialValue": "15",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 759659813439406
+				},
+				{
+					"eventType": "variable",
+					"name": "state",
+					"type": "string",
+					"initialValue": "sliding",
+					"comment": "\"sliding\", \"boosting\" or \"hit\"",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 750167208628056
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 457961267205632
+							"id": "on-function",
+							"objectClass": "Function",
+							"sid": 993743722626201,
+							"parameters": {
+								"name": "\"hit_anim\""
+							}
 						}
 					],
 					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 961056979686083,
+							"parameters": {
+								"variable": "state",
+								"value": "\"hit\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 503618804129454,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 207081787980542,
+							"parameters": {
+								"variable": "state",
+								"value": "\"sliding\""
+							}
+						}
+					],
+					"sid": 751369974603091
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-function",
+							"objectClass": "Function",
+							"sid": 799110336546093,
+							"parameters": {
+								"name": "\"boost_anim\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 890327514236108,
+							"parameters": {
+								"variable": "state",
+								"value": "\"boost\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "spr_player",
+							"sid": 943434837563653,
+							"parameters": {
+								"angle": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "spr_player",
+							"sid": 295281989302343,
+							"parameters": {
+								"frame-number": "2"
+							}
+						},
+						{
+							"id": "set-animation-speed",
+							"objectClass": "spr_player",
+							"sid": 125237777663110,
+							"parameters": {
+								"speed": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 378694553635808,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 975200556425182,
+							"parameters": {
+								"variable": "state",
+								"value": "\"sliding\""
+							}
+						}
+					],
+					"sid": 501901252769662
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 671603723829252,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"sliding\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "spr_player",
+							"sid": 105873722927089,
+							"parameters": {
+								"animation": "\"center\"",
+								"from": "current-frame"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "spr_player",
+							"sid": 309660017227836,
+							"parameters": {
+								"angle": "lerp(-15, 15, unlerp(-spr_player.max_speed_x, spr_player.max_speed_x, spr_player.speed_x))"
+							}
+						},
 						{
 							"id": "set-animation-speed",
 							"objectClass": "spr_player",
@@ -766,82 +891,27 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-between-values",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 957896118504465,
+							"sid": 406935139905214,
 							"parameters": {
-								"value": "spr_player.world_x",
-								"lower-bound": "-150",
-								"upper-bound": "150"
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"hit\""
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-animation",
+							"id": "set-angle",
 							"objectClass": "spr_player",
-							"sid": 328507581677441,
+							"sid": 209538358054941,
 							"parameters": {
-								"animation": "\"center\"",
-								"from": "current-frame"
+								"angle": "random(-angle_shake, angle_shake)"
 							}
 						}
 					],
-					"sid": 286737325260204
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "spr_player",
-							"sid": 842012292254717,
-							"parameters": {
-								"instance-variable": "world_x",
-								"comparison": 2,
-								"value": "-150"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "spr_player",
-							"sid": 286453104737177,
-							"parameters": {
-								"animation": "\"left\"",
-								"from": "current-frame"
-							}
-						}
-					],
-					"sid": 675093323792246
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "spr_player",
-							"sid": 788930801863833,
-							"parameters": {
-								"instance-variable": "world_x",
-								"comparison": 4,
-								"value": "150"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "spr_player",
-							"sid": 673892040558600,
-							"parameters": {
-								"animation": "\"right\"",
-								"from": "current-frame"
-							}
-						}
-					],
-					"sid": 125947384781810
+					"sid": 331537346939287
 				}
 			],
 			"sid": 221897017195327
@@ -1200,6 +1270,15 @@
 							}
 						},
 						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 873429778897774,
+							"parameters": {
+								"name": "\"boost_anim\"",
+								"parameter-n": []
+							}
+						},
+						{
 							"id": "destroy",
 							"objectClass": "spr_speed_up",
 							"sid": 952643188545717
@@ -1235,6 +1314,15 @@
 							"sid": 707333631060967,
 							"parameters": {
 								"name": "\"slow_down_player\"",
+								"parameter-n": []
+							}
+						},
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 271794914071314,
+							"parameters": {
+								"name": "\"hit_anim\"",
 								"parameter-n": []
 							}
 						},
