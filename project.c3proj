@@ -39,6 +39,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r134",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Tween",
 			"name": "Tween",
@@ -50,8 +58,7 @@
 	"uniqueId": "nsi2p69gl23",
 	"objectTypes": {
 		"items": [
-			"obj_camera",
-			"hands_with_mouse_neutra"
+			"obj_camera"
 		],
 		"subfolders": [
 			{
@@ -84,7 +91,10 @@
 				"name": "Sprites"
 			},
 			{
-				"items": [],
+				"items": [
+					"tut_hands",
+					"tut_text"
+				],
 				"subfolders": [],
 				"name": "GUI"
 			}
