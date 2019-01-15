@@ -443,7 +443,7 @@
 					"type": "spr_player",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "center",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -480,10 +480,10 @@
 					"world": {
 						"x": 309,
 						"y": 405,
-						"width": 129,
-						"height": 128,
-						"originX": 0.4883720930232558,
-						"originY": -0.0390625,
+						"width": 128,
+						"height": 123,
+						"originX": 0.4762868881225586,
+						"originY": -0.04402249059175105,
 						"color": [
 							1,
 							1,

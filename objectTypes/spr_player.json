@@ -78,42 +78,260 @@
 			{
 				"frames": [
 					{
-						"width": 129,
-						"height": 128,
-						"originX": 0.4883720930232558,
-						"originY": -0.0390625,
-						"originalSource": "C:\\Users\\gamedev\\Desktop\\spr_penguin-animation 1-000.png",
+						"width": 128,
+						"height": 123,
+						"originX": 0.4762868881225586,
+						"originY": -0.04402249059175105,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\penguin.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6,
+						"imageSpriteId": 4,
 						"collisionPoly": {
 							"points": [
-								0.3372093023255813,
-								0.37109375,
-								0.6666666666666666,
-								0.3515625,
-								0.7403100775193798,
-								0.5,
-								0.7209302325581395,
-								0.71875,
-								0.49224806201550386,
-								0.88671875,
-								0.2790697674418605,
-								0.75,
-								0.24806201550387597,
-								0.5
+								0.3215534687042235,
+								0.41821366062163495,
+								0.6587929725646973,
+								0.3962024153257594,
+								0.7341759204864502,
+								0.5634878795744135,
+								0.7143383026123047,
+								0.8100138268882193,
+								0.4802544116973877,
+								0.9993105364327487,
+								0.26204061508178716,
+								0.8452318193616202,
+								0.2303004264831543,
+								0.5634878795744135
+							]
+						},
+						"duration": 1
+					},
+					{
+						"width": 125,
+						"height": 123,
+						"originX": 0.464,
+						"originY": -0.043983739837398374,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\penguin02.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9,
+						"collisionPoly": {
+							"points": [
+								0.3215534687042235,
+								0.41821366062163495,
+								0.6587929725646973,
+								0.3962024153257594,
+								0.7341759204864502,
+								0.5634878795744135,
+								0.7143383026123047,
+								0.8100138268882193,
+								0.4802544116973877,
+								0.9993105364327487,
+								0.26204061508178716,
+								0.8452318193616202,
+								0.2303004264831543,
+								0.5634878795744135
+							]
+						},
+						"duration": 1
+					},
+					{
+						"width": 119,
+						"height": 123,
+						"originX": 0.46218487394957986,
+						"originY": -0.043983739837398374,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\penguin03.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 11,
+						"collisionPoly": {
+							"points": [
+								0.3215534687042235,
+								0.41821366062163495,
+								0.6587929725646973,
+								0.3962024153257594,
+								0.7341759204864502,
+								0.5634878795744135,
+								0.7143383026123047,
+								0.8100138268882193,
+								0.4802544116973877,
+								0.9993105364327487,
+								0.26204061508178716,
+								0.8452318193616202,
+								0.2303004264831543,
+								0.5634878795744135
 							]
 						},
 						"duration": 1
 					}
 				],
 				"sid": 992429274012689,
-				"name": "Animation 1",
-				"isLooping": false,
+				"name": "center",
+				"isLooping": true,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 12
+			},
+			{
+				"frames": [
+					{
+						"width": 142,
+						"height": 104,
+						"originX": 0.2887323943661972,
+						"originY": -0.15384615384615385,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\side_penguin.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6,
+						"collisionPoly": {
+							"points": [
+								0.3204225352112675,
+								0.18269230769230768,
+								0.8908450704225354,
+								0.3557692307692307,
+								0.7288732394366199,
+								0.7403846153846152,
+								0.10563380281690139,
+								0.6009615384615385
+							]
+						},
+						"duration": 1
+					},
+					{
+						"width": 142,
+						"height": 104,
+						"originX": 0.2887323943661972,
+						"originY": -0.15384615384615385,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\side_penguin2.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7,
+						"collisionPoly": {
+							"points": [
+								0.3204225352112675,
+								0.18269230769230768,
+								0.8908450704225354,
+								0.3557692307692307,
+								0.7288732394366199,
+								0.7403846153846152,
+								0.10563380281690139,
+								0.6009615384615385
+							]
+						},
+						"duration": 1
+					},
+					{
+						"width": 142,
+						"height": 104,
+						"originX": 0.2887323943661972,
+						"originY": -0.15384615384615385,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\side_penguin3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 12,
+						"collisionPoly": {
+							"points": [
+								0.3204225352112675,
+								0.18269230769230768,
+								0.8908450704225354,
+								0.3557692307692307,
+								0.7288732394366199,
+								0.7403846153846152,
+								0.10563380281690139,
+								0.6009615384615385
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 840653394369022,
+				"name": "right",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 12
+			},
+			{
+				"frames": [
+					{
+						"width": 142,
+						"height": 104,
+						"originX": 0.676056338028169,
+						"originY": -0.21153846153846154,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\side_penguin.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 27,
+						"collisionPoly": {
+							"points": [
+								0.8485915492957747,
+								0.4855769230769233,
+								0.40845070422535207,
+								0.8028846153846154,
+								0.05633802816901408,
+								0.37980769230769235,
+								0.5950704225352116,
+								0.139423076923077
+							]
+						},
+						"duration": 1
+					},
+					{
+						"width": 142,
+						"height": 104,
+						"originX": 0.676056338028169,
+						"originY": -0.21153846153846154,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\side_penguin2.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 29,
+						"collisionPoly": {
+							"points": [
+								0.8485915492957747,
+								0.4855769230769233,
+								0.40845070422535207,
+								0.8028846153846154,
+								0.05633802816901408,
+								0.37980769230769235,
+								0.5950704225352116,
+								0.139423076923077
+							]
+						},
+						"duration": 1
+					},
+					{
+						"width": 142,
+						"height": 104,
+						"originX": 0.676056338028169,
+						"originY": -0.21153846153846154,
+						"originalSource": "C:\\Users\\gamedev\\Desktop\\side_penguin3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 28,
+						"collisionPoly": {
+							"points": [
+								0.8485915492957747,
+								0.4855769230769233,
+								0.40845070422535207,
+								0.8028846153846154,
+								0.05633802816901408,
+								0.37980769230769235,
+								0.5950704225352116,
+								0.139423076923077
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 128882572886251,
+				"name": "left",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 12
 			}
 		],
 		"subfolders": []

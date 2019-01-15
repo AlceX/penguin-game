@@ -733,6 +733,143 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "Animation",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "spr_player",
+							"sid": 202347284020736,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"switch_speed\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-speed",
+							"objectClass": "spr_player",
+							"sid": 208044827664545,
+							"parameters": {
+								"speed": "0"
+							}
+						}
+					],
+					"sid": 130388546643072
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 457961267205632
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-speed",
+							"objectClass": "spr_player",
+							"sid": 390298882086644,
+							"parameters": {
+								"speed": "lerp(6, 12, unlerp(spr_player.min_speed_z, spr_player.max_speed_z, spr_player.speed_z))"
+							}
+						}
+					],
+					"sid": 287662658220892
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 957896118504465,
+							"parameters": {
+								"value": "spr_player.world_x",
+								"lower-bound": "-150",
+								"upper-bound": "150"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "spr_player",
+							"sid": 328507581677441,
+							"parameters": {
+								"animation": "\"center\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 286737325260204
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "spr_player",
+							"sid": 842012292254717,
+							"parameters": {
+								"instance-variable": "world_x",
+								"comparison": 2,
+								"value": "-150"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "spr_player",
+							"sid": 286453104737177,
+							"parameters": {
+								"animation": "\"left\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 675093323792246
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "spr_player",
+							"sid": 788930801863833,
+							"parameters": {
+								"instance-variable": "world_x",
+								"comparison": 4,
+								"value": "150"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "spr_player",
+							"sid": 673892040558600,
+							"parameters": {
+								"animation": "\"right\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 125947384781810
+				}
+			],
+			"sid": 221897017195327
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
 			"title": "Movement",
 			"description": "",
 			"isActiveOnStart": true,
