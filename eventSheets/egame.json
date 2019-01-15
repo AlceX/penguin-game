@@ -1323,6 +1323,26 @@
 							}
 						},
 						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 194716809561231,
+							"parameters": {
+								"name": "\"random_squeak\"",
+								"parameter-n": []
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 646907712873879,
+							"parameters": {
+								"audio-file": "woosh",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
 							"id": "destroy",
 							"objectClass": "spr_speed_up",
 							"sid": 952643188545717
@@ -1371,12 +1391,80 @@
 							}
 						},
 						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 777887783891694,
+							"parameters": {
+								"name": "\"random_squeak\"",
+								"parameter-n": []
+							}
+						},
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 369794939373553,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "choose(\"snow_hit_01\", \"snow_hit_02\")",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
 							"id": "destroy",
 							"objectClass": "spr_snow_clump",
 							"sid": 286232845244069
 						}
 					],
 					"sid": 585316258469978
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-function",
+							"objectClass": "Function",
+							"sid": 771115220629968,
+							"parameters": {
+								"name": "\"random_squeak\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 863767657807644,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 353039471173550,
+									"parameters": {
+										"first-value": "random(1)",
+										"comparison": 5,
+										"second-value": "0.5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 291357898391377,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "choose(\"squeak_01\", \"squeak_02\")",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 251817240129351
+						}
+					]
 				}
 			],
 			"sid": 682766657600568
@@ -1693,6 +1781,17 @@
 									}
 								},
 								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 664884030388641,
+									"parameters": {
+										"audio-file": "win",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
 									"id": "tween-one-property",
 									"objectClass": "gui_timer",
 									"sid": 769102558590158,
@@ -1842,6 +1941,30 @@
 				}
 			],
 			"sid": 296665261982652
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 659661259363485
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 240758039419651,
+					"parameters": {
+						"audio-file": "almost_new",
+						"loop": "looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 211816721320449
 		},
 		{
 			"eventType": "block",
