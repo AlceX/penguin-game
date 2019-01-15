@@ -39,14 +39,6 @@
 			"bundled": false
 		},
 		{
-			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
-			"author": "Scirra",
-			"version": "r134",
-			"bundled": false
-		},
-		{
 			"type": "behavior",
 			"id": "Tween",
 			"name": "Tween",
@@ -59,12 +51,7 @@
 	"objectTypes": {
 		"items": [
 			"obj_camera",
-			"spr_rock",
-			"spr_player",
-			"spr_snow_clump",
-			"spr_speed_up",
-			"Text",
-			"bg_floor"
+			"hands_with_mouse_neutra"
 		],
 		"subfolders": [
 			{
@@ -80,10 +67,26 @@
 				"items": [
 					"bg_sky",
 					"bg_gradient",
-					"bg_mountains"
+					"bg_mountains",
+					"bg_floor"
 				],
 				"subfolders": [],
 				"name": "BG"
+			},
+			{
+				"items": [
+					"spr_player",
+					"spr_rock",
+					"spr_snow_clump",
+					"spr_speed_up"
+				],
+				"subfolders": [],
+				"name": "Sprites"
+			},
+			{
+				"items": [],
+				"subfolders": [],
+				"name": "GUI"
 			}
 		]
 	},

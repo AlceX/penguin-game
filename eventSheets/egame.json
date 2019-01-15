@@ -12,27 +12,6 @@
 			"sid": 493997611043259
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 130709656893713
-				}
-			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "Text",
-					"sid": 990963226226538,
-					"parameters": {
-						"text": "round(time) & \" \" & round(spr_player.speed_z)"
-					}
-				}
-			],
-			"sid": 301282738060619
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Level Generation",
@@ -298,7 +277,7 @@
 			"disabled": false,
 			"title": "Debug",
 			"description": "",
-			"isActiveOnStart": true,
+			"isActiveOnStart": false,
 			"children": [
 				{
 					"eventType": "block",
@@ -872,7 +851,7 @@
 			"disabled": false,
 			"title": "Movement",
 			"description": "",
-			"isActiveOnStart": true,
+			"isActiveOnStart": false,
 			"children": [
 				{
 					"eventType": "block",
@@ -1494,6 +1473,66 @@
 				}
 			],
 			"sid": 853253740197104
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-group-active",
+					"objectClass": "System",
+					"sid": 599734582495475,
+					"parameters": {
+						"group-name": "\"Movement\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "mouse-button-is-down",
+					"objectClass": "Mouse",
+					"sid": 565303952763947,
+					"parameters": {
+						"mouse-button": "left"
+					}
+				},
+				{
+					"id": "mouse-button-is-down",
+					"objectClass": "Mouse",
+					"sid": 106815271020268,
+					"parameters": {
+						"mouse-button": "right"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 240085820092830,
+					"parameters": {
+						"layer": "\"title\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 338549401456929,
+					"parameters": {
+						"layer": "\"overlay\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 992934822685588,
+					"parameters": {
+						"group-name": "\"Movement\"",
+						"state": "activated"
+					}
+				}
+			],
+			"sid": 772319022390093
 		}
 	],
 	"sid": 160995284179888
