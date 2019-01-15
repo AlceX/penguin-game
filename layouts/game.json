@@ -772,7 +772,7 @@
 					"world": {
 						"x": 320,
 						"y": 0,
-						"width": 285.93282908666924,
+						"width": 385.93282908666924,
 						"height": 150.2399243630004,
 						"originX": 0.5,
 						"originY": 0,
@@ -823,6 +823,45 @@
 						"height": 30,
 						"originX": 0.5,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_flag",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 21,
+					"instanceVariables": {
+						"world_x": 100,
+						"world_y": 100,
+						"world_z": 100,
+						"transformed_x": 0,
+						"transformed_y": 0,
+						"transformed_z": 0,
+						"screen_x": 0,
+						"screen_y": 0,
+						"scale": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": -417,
+						"y": 453,
+						"width": 300,
+						"height": 481,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

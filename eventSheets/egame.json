@@ -263,6 +263,24 @@
 									"parameters": {
 										"collisions": "disabled"
 									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_flag",
+									"sid": 555448642800656,
+									"parameters": {
+										"instance-variable": "world_y",
+										"value": "4000"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_flag",
+									"sid": 382451674013489,
+									"parameters": {
+										"instance-variable": "world_z",
+										"value": "80100"
+									}
 								}
 							],
 							"sid": 945153728189798
