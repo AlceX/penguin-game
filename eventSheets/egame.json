@@ -1563,6 +1563,56 @@
 			"sid": 853253740197104
 		},
 		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Timer",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "timer",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 810672542018801
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 602016525268419
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "gui_timer",
+							"sid": 501625206011770,
+							"parameters": {
+								"text": "floor(timer) & \".\" & floor((timer % 1) * 10)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 263053320803650,
+							"parameters": {
+								"variable": "timer",
+								"value": "dt"
+							}
+						}
+					],
+					"sid": 424577635002600
+				}
+			],
+			"sid": 296665261982652
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1617,6 +1667,23 @@
 					"parameters": {
 						"group-name": "\"Movement\"",
 						"state": "activated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 969342995273272,
+					"parameters": {
+						"group-name": "\"Timer\"",
+						"state": "activated"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "gui_timer",
+					"sid": 274478773944731,
+					"parameters": {
+						"visibility": "visible"
 					}
 				}
 			],

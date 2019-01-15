@@ -93,7 +93,8 @@
 			{
 				"items": [
 					"tut_hands",
-					"tut_text"
+					"tut_text",
+					"gui_timer"
 				],
 				"subfolders": [],
 				"name": "GUI"

@@ -1,0 +1,19 @@
+{
+	"name": "gui_timer",
+	"plugin-id": "Spritefont2",
+	"sid": 265090439167017,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 128,
+		"height": 256,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\gamedev\\Desktop\\text.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 44
+	}
+}
