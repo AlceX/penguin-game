@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 13400,
-	"name": "Penguin Game",
+	"name": "A Night's Slide",
 	"runtime": "c3",
 	"useWorker": false,
 	"bundleAddons": false,
@@ -74,7 +74,8 @@
 	"uniqueId": "nsi2p69gl23",
 	"objectTypes": {
 		"items": [
-			"obj_camera"
+			"obj_camera",
+			"splash"
 		],
 		"subfolders": [
 			{
@@ -130,13 +131,15 @@
 	},
 	"layouts": {
 		"items": [
-			"Game"
+			"Game",
+			"Splash"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"eGame"
+			"eGame",
+			"eSplash"
 		],
 		"subfolders": []
 	},
@@ -267,12 +270,12 @@
 		"sampling": "trilinear",
 		"downscaling": "medium",
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "progress-logo",
 		"preloadSounds": true,
 		"clearBackground": true,
 		"enhancedAccelerationPrecision": true
 	},
 	"viewportWidth": 640,
 	"viewportHeight": 480,
-	"firstLayout": null
+	"firstLayout": "Splash"
 }

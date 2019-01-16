@@ -1,0 +1,179 @@
+{
+	"name": "eSplash",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 454178083057863
+				}
+			],
+			"actions": [
+				{
+					"id": "preload",
+					"objectClass": "Audio",
+					"sid": 749535858585991,
+					"parameters": {
+						"audio-file": "almost_new"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "splash",
+					"sid": 397964060451672,
+					"parameters": {
+						"opacity": "0"
+					}
+				},
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 194045709400016,
+					"parameters": {
+						"name": "\"fade_in\"",
+						"parameter-n": []
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 361111771762069,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 316027546895821,
+					"parameters": {
+						"name": "\"fade_out\"",
+						"parameter-n": []
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 709147076850361,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 144299481699120,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 909091067250292
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-function",
+					"objectClass": "Function",
+					"sid": 777072001856000,
+					"parameters": {
+						"name": "\"fade_in\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 127179436597974,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 582612385921742,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "1",
+								"end-index": "100"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 468180880091888,
+							"parameters": {
+								"seconds": "0.01 * loopindex"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "splash",
+							"sid": 179186340622700,
+							"parameters": {
+								"opacity": "Self.Opacity + 1"
+							}
+						}
+					],
+					"sid": 412149999986182
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-function",
+					"objectClass": "Function",
+					"sid": 799582007338691,
+					"parameters": {
+						"name": "\"fade_out\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 766936766601063,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 904421443228495,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "1",
+								"end-index": "100"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 616639127144440,
+							"parameters": {
+								"seconds": "0.01 * loopindex"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "splash",
+							"sid": 112751231365612,
+							"parameters": {
+								"opacity": "Self.Opacity - 1"
+							}
+						}
+					],
+					"sid": 704035985765923
+				}
+			]
+		}
+	],
+	"sid": 741242361434098
+}
