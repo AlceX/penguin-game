@@ -2042,6 +2042,95 @@
 				}
 			],
 			"sid": 772319022390093
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "tut_text",
+					"sid": 851415498786001,
+					"parameters": {
+						"unique-id": "24"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 513297556926745,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 135150154273853,
+							"parameters": {
+								"object": "tut_text"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-cursor-style",
+							"objectClass": "Mouse",
+							"sid": 814814620659226,
+							"parameters": {
+								"cursor-style": "hand"
+							}
+						}
+					],
+					"sid": 619838626746938
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 621973942255130
+						}
+					],
+					"actions": [
+						{
+							"id": "set-cursor-style",
+							"objectClass": "Mouse",
+							"sid": 209401545548181,
+							"parameters": {
+								"cursor-style": "normal"
+							}
+						}
+					],
+					"sid": 490489041203533
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 123534671147469,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "tut_text"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-url",
+							"objectClass": "Browser",
+							"sid": 256091400233626,
+							"parameters": {
+								"url": "\"https://twitter.com/Alce_X/\"",
+								"target": "self"
+							}
+						}
+					],
+					"sid": 785610312123801
+				}
+			]
 		}
 	],
 	"sid": 160995284179888

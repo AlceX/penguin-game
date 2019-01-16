@@ -423,7 +423,7 @@
 						"deacceleration_x": 100,
 						"max_speed_x": 200,
 						"speed_z": 0,
-						"max_speed_z": 2800,
+						"max_speed_z": 3200,
 						"min_speed_z": 300,
 						"acceleration_z": 100,
 						"speed_z_step": 300

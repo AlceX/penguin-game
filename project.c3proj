@@ -40,6 +40,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r134",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -83,7 +91,8 @@
 					"Function",
 					"Keyboard",
 					"Mouse",
-					"Audio"
+					"Audio",
+					"Browser"
 				],
 				"subfolders": [],
 				"name": "System"

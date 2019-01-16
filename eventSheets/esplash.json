@@ -20,6 +20,14 @@
 					}
 				},
 				{
+					"id": "set-cursor-style",
+					"objectClass": "Mouse",
+					"sid": 495917225591717,
+					"parameters": {
+						"cursor-style": "hand"
+					}
+				},
+				{
 					"id": "set-opacity",
 					"objectClass": "splash",
 					"sid": 397964060451672,
@@ -59,6 +67,14 @@
 					"sid": 709147076850361,
 					"parameters": {
 						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-cursor-style",
+					"objectClass": "Mouse",
+					"sid": 513023089463112,
+					"parameters": {
+						"cursor-style": "normal"
 					}
 				},
 				{
@@ -173,6 +189,32 @@
 					"sid": 704035985765923
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 814247038129274,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-url",
+					"objectClass": "Browser",
+					"sid": 310148275960300,
+					"parameters": {
+						"url": "\"https://twitter.com/Alce_X/\"",
+						"target": "self"
+					}
+				}
+			],
+			"sid": 173123981072826
 		}
 	],
 	"sid": 741242361434098
